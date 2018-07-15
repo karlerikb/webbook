@@ -1,0 +1,93 @@
+/* ------------------------ */
+/* Basic Setup */
+/* ------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+}
+
+.row {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    width: 98%;
+}
+
+
+/* ------------------------ */
+/* Reusable Components */
+/* ------------------------ */
+ul {
+    list-style: none;
+}
+
+section ul li {
+    margin-left: 30px;
+    /* border: 1px solid black; */
+    padding-top: 5px;
+}
+
+code {
+    display: block;
+}
+
+
+
+/* ------------------------ */
+/* Notes */
+/* ------------------------ */
+nav ul {
+    border: 1px solid black;
+}
+
+nav .links > li {
+    display: inline-block;
+}
+.links {
+    background: orange;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+/* ------------------------ */
+/* Notes */
+/* ------------------------ */
+.notes {
+    margin: 5px 0;
+    border: 1px solid black;
+}
+
+.testspan {
+    /* border: 1px solid black; */
+    padding: 20px;
+    background: orange;
+    display: inline-block;
+}
+
+.testcode {
+    border: 1px solid black;
+    padding: 30px;
+}
+
+
+code.area {
+    border: 1px solid black;
+    margin: 20px;
+    display: inline-block;
+}
+
+code.line {
+    margin: 5px;
+    /* border: 1px solid black; */
+}
+
+.wrapper {
+    display: inline-block;
+}
