@@ -16,8 +16,13 @@ html {
 
 .row {
     margin: 0 auto;
-    /* border: 1px solid black; */
     width: 98%;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 
@@ -49,7 +54,6 @@ ul {
 
 .notes ul li {
     margin-left: 30px;
-    /* border: 1px solid black; */
     padding-top: 5px;
 }
 
@@ -57,6 +61,8 @@ code {
     font-size: 95%;
     display: block;
 }
+
+a { text-decoration: none; }
 
 
 
@@ -66,25 +72,36 @@ code {
 /* Header */
 /* ------------------------ */
 header {
-    border: 1px solid black;
+    border: 1px solid #362203;
     background-color: #f5b042;
     color: #362203;
 }
 
+nav {
+    height: 48px;
+}
+
 nav ul {
-    padding: 5px;
+    margin-top: 10px;
+    padding: 10px 0;
     background: #f5b042;
-    
-    position: absolute;
-        top: 1%;
-        left: 50%;
-    transform: translate(-50%);
-    display: inline-block;
 }
 
 nav ul li {
+    padding: 0 10px;
     display: inline-block;
 }
+
+nav ul li:first-child { padding-left: 2px; }
+
+nav ul li a:link,
+nav ul li a:visited {
+    border: 1px solid #160e01;
+    padding: 5px 15px;
+    color: #160e01;
+    background: #fefbf4;
+}
+
 
 
 
@@ -121,17 +138,22 @@ nav ul li {
 /* Code */
 /* ------------------------ */
 code.area {
-    margin: 10px;
-    border: 1px solid #2b2b2b;
-    border-radius: 2px;
-    padding: 5px 0;
+    padding: 5px 15px;
     background: #3c3c3c;
     color: #ddd;
     display: inline-block;
 }
 
 code.line {
-    margin: 5px 15px;
+    margin: 5px 0;
+}
+
+code.line * {
+    font-size: 100%;
+}
+
+code.block {
+    display: inline-block;
 }
 
 code.inline {
@@ -141,27 +163,28 @@ code.inline {
 
 
 /* ----- HTML ----- */
-.inline .html {
-    padding: 7px 12px 7px 9px;
-    border: 1px solid #102c17;
+.html { display: inline-block; }
+
+.html .inline {
+    padding: 12px 9px;
+    border: 1px solid #0c341d;
     border-radius: 2px;
-    background: #a2ddb1;
+    background: #9ae8bb;
     word-spacing: -3px;
     letter-spacing: -3px;
-    display: inline-block;
 }
 
-.inline .html span {
+.html .inline span {
     word-spacing: normal;
     letter-spacing: normal;
-    display: inline-block;
 }
 
-.inline .html .attribute {
+.html .inline .attribute {
     margin-left: 5px;
+    margin-right: -5px;
 }
 
-.inline .html .highlight {
+.html .inline .highlight {
     margin: 0 2px;
     border: 1px solid #302803;
     border-radius: 2px;
@@ -175,31 +198,38 @@ code.inline {
 
 
 /* ----- CSS ----- */
-.inline .css {
+.css { display: inline-block; }
+
+.css.labelled {
+    margin: 10px;
+    border: 1px solid #0d3047;
+}
+
+.css .inline {
     padding: 7px 12px;
-    border: 1px solid #002c56;
+    border: 1px solid #0d3048;
     border-radius: 2px;
-    background: #bcdeff;
+    background: #b6daf2;
     word-spacing: -3px;
     letter-spacing: -3px;
     display: inline-block;
 }
 
-.inline .css span {
+.css .inline span {
     word-spacing: normal;
     letter-spacing: normal;
     display: inline-block;
 }
 
-.inline .css .property {
+.css .inline .property {
     font-weight: bold;
 }
 
-.inline .css .value {
+.css .inline .value {
     margin-left: 8px;
 }
 
-.inline .css .highlight {
+.css .inline .highlight {
     margin-right: 3px;
     border: 1px solid #302803;
     border-radius: 2px;
@@ -209,18 +239,44 @@ code.inline {
     background: #f8e48f;
 }
 
-.area .css {
-    color: #909090;
+.css .area { color: #909090; }
+.css .area .property { color: #ddd; }
+.css .area .selector { color: #eda25f; }
+.css .area .value { color: #dbd955; }
+
+.css .label {
+    padding: 3px 10px;
+    color: #081c2a;
+    font-size: 90%;
+    text-align: right;
+    background: #8ac5ea;
 }
 
-.area .css .property {
-    color: #ddd;
+
+/* ----- JS ----- */
+.js { display: inline-block; }
+
+.js.labelled {
+    margin: 10px;
+    border: 1px solid #312803;
 }
 
-.area .css .selector {
-    color: #eda25f;
+.js .label {
+    padding: 3px 10px;
+    color: #312803;
+    font-size: 90%;
+    text-align: right;
+    background: #f6d85f;
 }
 
-.area .css .value {
-    color: #dbd955;
+
+/* ----- Generic ----- */
+.generic { display: inline-block; }
+
+.generic .inline {
+    padding: 7px 12px;
+    border: 1px solid #0d3048;
+    border-radius: 2px;
+    background: #e2e4e6;
+    display: inline-block;
 }
